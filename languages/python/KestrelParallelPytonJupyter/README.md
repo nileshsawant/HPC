@@ -44,7 +44,7 @@ $ python -m ipykernel install --user --name=myEnvJupyter
 
 (Optional) To access your `scratch` directory from your project directory, execute the following in your project directory
 ```
-ln -s /scratch/<username>/ scratch
+$ ln -s /scratch/<username>/ scratch
 ```
 The above command will create a symbolic link to the `scratch` folder, which can be navigated to from Jupyter hub to access files in your scratch directory.
 
@@ -90,92 +90,95 @@ A general guide to allocating resources for running jobs on the Kestrel can be f
 
 ### GPU compatible modules: E.g. CuPy, numba-cuda etc.
 
-Launch an interactive job
-```
-$ salloc -A <projectname> -t 00:15:00 --partition=debug --gres=gpu:2
-$ module load anaconda3/2024.06.1
-$ conda activate ./myEnv
-$ jupyter-lab --no-browser --ip=$(hostname -s)
-```
+1. Kestrel: Launch an interactive job
+    ```
+    $ salloc -A <projectname> -t 00:15:00 --partition=debug --gres=gpu:2
+    $ module load anaconda3/2024.06.1
+    $ conda activate ./myEnv
+    $ jupyter-lab --no-browser --ip=$(hostname -s)
+    ```
 
-Local terminal. Establish a SSH tunnel
-```
-$ ssh -N -L 8888:<nodename>:8888 <username>@kestrel-gpu.hpc.nrel.gov
-```
 
-Web browser
-```
-http://127.0.0.1:8888/?token=<alphabet soup>
-```
+2. Local terminal: Establish a SSH tunnel
+    ```
+    $ ssh -N -L 8888:<nodename>:8888 <username>@kestrel-gpu.hpc.nrel.gov
+    ```
 
-File > New > Notebook > myEnvJupyter
+3. Web browser
+    ```
+    http://127.0.0.1:8888/?token=<alphabet soup>
+    ```
+
+    File > New > Notebook > myEnvJupyter
 
 
 ### Multi thread capable modules: E.g. Dask
 
-Launch a multi thread interactive job
-```
-$ salloc -A <projectname> -t 00:15:00 --nodes=1 --ntasks-per-node=104 --partition=debug
-$ module load anaconda3/2024.06.1
-$ conda activate ./myEnv
-$ jupyter-lab --no-browser --ip=$(hostname -s)
-```
+1. Kestrel: Launch a multi thread interactive job
+    ```
+    $ salloc -A <projectname> -t 00:15:00 --nodes=1 --ntasks-per-node=104 --partition=debug
+    $ module load anaconda3/2024.06.1
+    $ conda activate ./myEnv
+    $ jupyter-lab --no-browser --ip=$(hostname -s)
+    ```
 
-Local terminal. Establish a SSH tunnel
-```
-$ ssh -N -L 8888:<nodename>:8888 <username>@kestrel.hpc.nrel.gov
-```
-Web browser
-```
-http://127.0.0.1:8888/?token=<alphabet soup>
-```
+2. Local terminal: Establish a SSH tunnel
+    ```
+    $ ssh -N -L 8888:<nodename>:8888 <username>@kestrel.hpc.nrel.gov
+    ```
 
-File > New > Notebook > myEnvJupyter
+3. Web browser
+    ```
+    http://127.0.0.1:8888/?token=<alphabet soup>
+    ```
+
+    File > New > Notebook > myEnvJupyter
 
 
 ### Multi node capable job. E.g. mpi4py through ipyparallel 
 
-Launch a multi node interactive job
-```
-$ salloc -A <projectname> -t 00:15:00 --nodes=2 --ntasks-per-node=1 --partition=short
-$ module load anaconda3/2024.06.1
-$ conda activate ./myEnv
-$ jupyter-lab --no-browser --ip=$(hostname -s)
-```
+1. Kestrel: Launch a multi node interactive job
+    ```
+    $ salloc -A <projectname> -t 00:15:00 --nodes=2 --ntasks-per-node=1 --partition=short
+    $ module load anaconda3/2024.06.1
+    $ conda activate ./myEnv
+    $ jupyter-lab --no-browser --ip=$(hostname -s)
+    ```
 
-Local terminal. Establish a SSH tunnel
-```
-$ ssh -N -L 8888:<nodename>:8888 <username>@kestrel.hpc.nrel.gov
-```
-Web browser
-```
-http://127.0.0.1:8888/?token=<alphabet soup>
-```
+2. Local terminal: Establish a SSH tunnel
+    ```
+    $ ssh -N -L 8888:<nodename>:8888 <username>@kestrel.hpc.nrel.gov
+    ```
 
-File > New > Notebook > myEnvJupyter
+3. Web browser
+    ```
+    http://127.0.0.1:8888/?token=<alphabet soup>
+    ```
+
+    File > New > Notebook > myEnvJupyter
 
 
 ### GPU + multi node jobs. E.g. CuPy + mpi4py through ipyparallel
 
-Launch an interactive job
-```
-$ salloc -A projectname -t 00:15:00 --nodes=2 --ntasks-per-node=1 --gres=gpu:2 
-$ module load anaconda3/2024.06.1
-$ conda activate ./myEnv
-$ jupyter-lab --no-browser --ip=$(hostname -s)
-```
+1. Kestrel: Launch an interactive job
+    ```
+    $ salloc -A projectname -t 00:15:00 --nodes=2 --ntasks-per-node=1 --gres=gpu:2 
+    $ module load anaconda3/2024.06.1
+    $ conda activate ./myEnv
+    $ jupyter-lab --no-browser --ip=$(hostname -s)
+    ```
 
-Local terminal. Establish a SSH tunnel
-```
-$ ssh -N -L 8888:<nodename>:8888 <username>@kestrel-gpu.hpc.nrel.gov
-```
+2. Local terminal: Establish a SSH tunnel
+    ```
+    $ ssh -N -L 8888:<nodename>:8888 <username>@kestrel-gpu.hpc.nrel.gov
+    ```
 
-Web browser
-```
-http://127.0.0.1:8888/?token=<alphabet soup>
-```
+3. Web browser
+    ```
+    http://127.0.0.1:8888/?token=<alphabet soup>
+    ```
 
-File > New > Notebook > myEnvJupyter
+    File > New > Notebook > myEnvJupyter
 
 ###
 
