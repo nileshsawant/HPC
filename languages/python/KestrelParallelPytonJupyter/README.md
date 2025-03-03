@@ -88,6 +88,14 @@ $ conda install matplotlib
 
 A general guide to allocating resources for running jobs on the Kestrel can be found in the [official documentation](https://nrel.github.io/HPC/Documentation/Systems/Kestrel/Running/). Below are example proceedures suitable for running jobs involving specific python modules, depending on their parallelisation capability. 
 
+The text in red box shows an example of the output parameter `<nodename>` and the text in yellow box shows an example of the output parameter `<alphabet soup>`, relevant to the following tutorial.
+
+<img src="metadata/nodeName.png" alt="<nodename>" width="300"/>
+
+<img src="metadata/alphabetSoup.png" alt="<alphabet soup>" width="600"/>
+
+<!-- ![<alphabet soup>](metadata/alphabetSoup.png "<alphabet soup>") -->
+
 ### GPU compatible modules: E.g. CuPy, numba-cuda etc.
 
 1. Kestrel: Launch an interactive job
