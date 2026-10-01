@@ -44,6 +44,7 @@ Directories in /projects have a quota assigned based on the project resource all
     # To see usage towards your quota, run:
 
     [user@kl1 ~]$ lfs quota -gh csc000 /projects
+    
     Disk quotas for grp csc000 (gid 249914):
          Filesystem    used   quota   limit   grace   files   quota   limit   grace
           /projects  10.61T     20T   20.1T       - 1064760       0       0       -
