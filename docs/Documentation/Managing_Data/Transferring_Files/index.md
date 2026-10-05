@@ -44,8 +44,11 @@ $ rsync -aP --no-g /scratch/username/dataset1/ /mss/users/username/dataset1/
 If you're transferring many files then you should use rsync:
 
 ```bash
-$ rsync -azP --no-g /mss/users/username/dataset1/ user@desthost:/home/username/dataset1/
+$ rsync -aP --no-g /mss/users/username/dataset1/ user@desthost:/home/username/dataset1/
 ```
+
+!!! Note "Setting Network Bandwidth Limits"
+    If are on a Wi-Fi connection and have concerns about limited bandwidth, you may throttle your connection by using the flag `--bwlimit=RATE` where RATE is a value like 1.5M is a limit of 1.5 Megabytes per second. 
 
 If you're transferring an individual file then use scp:
 
