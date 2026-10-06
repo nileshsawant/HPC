@@ -85,6 +85,9 @@ $ tar -cf newArchiveName.tar file1 file2 file3
 $ tar -cf newArchiveName.tar /path/to/folder/
 ```
 
+!!! Warning "Disk Usage"
+    Please note that this process approximately doubles disk usage of your data, so you should ensure that creating the tarball will not hit the limit of your disk space.
+
 The `-c` flag denotes **c**reating an archive, and `-f` denotes that the next argument given will be the archive name&mdash;in this case it means the name you would prefer for the resulting archive file. 
 
 To extract files from a tar, it's recommended to use:
