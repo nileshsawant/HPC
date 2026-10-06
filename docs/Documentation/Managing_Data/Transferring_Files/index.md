@@ -78,7 +78,7 @@ For Windows you will need to download WinSCP to transfer files to and from HPC s
 
 ### tar
 
-`tar`, along with [`zip`](#zip), is one of the basic commands to combine multiple individual files into a single file (called a "tarball"). `tar` requires at least one command line option. A typical usage would be:
+`tar`, along with `zip`, is one of the basic commands to combine multiple individual files into a single file (called a "tarball"). `tar` requires at least one command line option. A typical usage would be:
 ```bash
 $ tar -cf newArchiveName.tar file1 file2 file3
 # or
@@ -98,7 +98,7 @@ $ tar -xvf existingArchiveName.tar
 
 ### Compressing
 
-`tar` can also generate compressed tarballs which reduce the size of the resulting archive. This can be done with the `-z` flag (which just calls [`gzip`](#gzip) on the resulting archive automatically, resulting in a `.tar.gz` extension) or `-j` (which uses [`bzip2`](#bzip2), creating a `.tar.bz2`).
+`tar` can also generate compressed tarballs which reduce the size of the resulting archive. This can be done with the `-z` flag (which just calls `gzip` on the resulting archive automatically, resulting in a `.tar.gz` extension) or `-j` (which uses `bzip2`, creating a `.tar.bz2`).
 
 For example:
 
