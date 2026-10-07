@@ -48,7 +48,7 @@ $ rsync -aP --no-g /mss/users/username/dataset1/ user@desthost:/home/username/da
 ```
 
 !!! Note "Setting Network Bandwidth Limits"
-    If are on a Wi-Fi connection and have concerns about limited bandwidth, you may throttle your connection by using the flag `--bwlimit=RATE` where RATE is a value like 1.5M is a limit of 1.5 Megabytes per second. 
+    For transfers over Wi-Fi, you may limit bandwidth with `--bwlimit=RATE`. For example, `--bwlimit=1.5M` sets a limit of 1.5 Megabytes per second.
 
 If you're transferring an individual file then use scp:
 
